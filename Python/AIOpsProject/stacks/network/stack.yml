@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: VPC, Subnet, and Security Groups for SageMaker and EMR
+
+Resources:
+  # VPC:
+  #   Type: AWS::EC2::VPC
+  #   Properties:
+  #     CidrBlock: 10.0.0.0/16
+  #     EnableDnsHostnames: true
+
+  # Subnet:
+  #   Type: AWS::EC2::Subnet
+  #   Properties:
+  #     VpcId: vpc-e6cfb69c
+  #     CidrBlock: 10.0.1.0/24
+  #     AvailabilityZone: us-east-1a
+
+  SageMakerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      groupDescription: Allow all inbound and outbound for SageMaker
+      VpcId: vpc-e6cfb69c
+      SecurityGroupIngress:
+        - IpProtocol: -1
+          FromPort: -1
+          ToPort: -1
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          FromPort: -1
+          ToPort: -1
+          CidrIp: 0.0.0.0/0
+
+Outputs:
+  SageMakerSecurityGroupOutput:
+    Description: Security Group's Id
+    Value: !Ref SageMakerSecurityGroup
+    Export:
+      Name: SageMakerSecurityGroupID
+  MyName:
+    Value: !Ref "AWS::StackName"

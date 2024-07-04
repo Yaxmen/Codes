@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWS SageMaker Notebook Instance with S3 Access
+
+Resources:
+  SageMakerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumerolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: sagemaker.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: SageMakerS3Access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                  - s3:ListBucket
+                Resource:
+                  - !Sub 'arn:aws:s3:::tf-dev1-aiops/*'
+                  - !Sub 'arn:aws:s3:::tf-dev1-aiops'
+  
+  SageMakerNotebookInstance:
+    Type: AWS::SageMaker::NotebookInstance
+    Properties:
+      InstanceType: ml.t2.medium
+      RoleArn: !GetAtt SageMakerRole.Arn
+      SubnetId: subnet-d36549b4
+      SecurityGroupIds:
+        - !ImportValue SageMakerSecurityGroupID
+
+Outputs:
+  MyName:
+    Value: !Ref "AWS::StackName"
