@@ -1,27 +1,23 @@
 # Códigos
 
-Este repositório contém alguns códigos de projetos e freelas que foram desenvolvidos por [Yaxmen](https://github.com/Yaxmen) e equipe, incluindo códigos em Python, HTML, PowerShell e C#.
+Este repositório contém alguns códigos de projetos que foram desenvolvidos por [Yaxmen](https://github.com/Yaxmen) e equipe, incluindo códigos em Python, HTML, PowerShell, Java e C#.
 
 ### Python
 
-- **Projeto:** [BKEND]
-  - [[Link para códigos](https://github.com/Yaxmen/codigos/blob/main/Python/Create_tables.py)]
-  - [Utilizando SQLAlchemy para comunicação com FastAPI.]
+- **Projeto:** [e-commerce]
+  - [[Códigos](https://github.com/Yaxmen/codigos/blob/main/Python/Create_tables.py)]
 
 ### HTML
 
-- **Projeto:** [FACUL]
-  - [[Link para códigos](https://github.com/Yaxmen/codigos/blob/main/HTML/Main.html)]
-  - [Projeto para apresentação academica.]
+- **Projeto:** [cliente¹]
+  - [[Códigos](https://github.com/Yaxmen/codigos/blob/main/HTML/Main.html)]
 
 ### PowerShell
 
-- **Projeto:** [MSO365]
-  - [[Link para códigos](https://github.com/Yaxmen/codigos/blob/main/Shell%20Script/AprovadorO365.ps1)]
-  - [Projeto para automação dos processos realizados no ITSM SNOW com processamento via Ansible.]
+- **Projeto:** [mso365]
+  - [[Códigos](https://github.com/Yaxmen/codigos/blob/main/Shell%20Script/AprovadorO365.ps1)]
 
 ### C#
 
-- **Projeto:** [FREELA]
-  - [[Link para códigos](https://github.com/Yaxmen/codigos/blob/main/C%23/GerenciaEstoqLoja.cs)]
-  - [Alguns códigos em C# que criei para clientes externos.]
+- **Projeto:** [cliente²]
+  - [[Códigos](https://github.com/Yaxmen/codigos/blob/main/C%23/GerenciaEstoqLoja.cs)]
