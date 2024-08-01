@@ -7,31 +7,31 @@ Este repositório contém uma coleção de códigos de projetos e freelas desenv
 ### Python
 
 - **Projeto: Backend**
-  - [Link para códigos](https://github.com/Yaxmen/codigos/blob/main/Python/Create_tables.py)
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Python)
   - Descrição: Utilização do SQLAlchemy para comunicação com FastAPI.
 
 ### JavaScript
 
 - **Projeto: WebApp**
-  - [Link para códigos](https://github.com/Yaxmen/codigos/blob/main/JavaScript/app.js)
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/JavaScript)
   - Descrição: Scripts para funcionalidades dinâmicas em aplicações web.
 
 ### HTML
 
 - **Projeto: Academic Presentation**
-  - [Link para códigos](https://github.com/Yaxmen/codigos/blob/main/HTML/Main.html)
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/HTML)
   - Descrição: Projeto para apresentação acadêmica.
 
 ### PowerShell
 
 - **Projeto: O365 Automation**
-  - [Link para códigos](https://github.com/Yaxmen/codigos/blob/main/Shell%20Script/AprovadorO365.ps1)
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Shell%20Script)
   - Descrição: Automação de processos realizados no ITSM SNOW com processamento via Ansible.
 
 ### C#
 
 - **Projeto: Inventory Management**
-  - [Link para códigos](https://github.com/Yaxmen/codigos/blob/main/C%23/GerenciaEstoqLoja.cs)
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/C%23)
   - Descrição: Códigos desenvolvidos em C# para clientes externos, focados em gestão de estoque.
 
 ## Utilização
