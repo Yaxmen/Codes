@@ -20,19 +20,19 @@ Este repositório contém uma coleção de códigos de projetos e freelas desenv
 
 - **Projeto: Academic Presentation**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/HTML)
-  - Descrição: Projeto para apresentação acadêmica.
+  - Descrição: Projeto para apresentação acadêmica - (2022).
 
 ### PowerShell
 
-- **Projeto: O365 Automation**
+- **Projeto: MSO365 Automation**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Shell%20Script)
-  - Descrição: Automação de processos realizados no ITSM SNOW com processamento via Ansible.
+  - Descrição: Automação de processos coletando dados do ITSM SNOW com processamento via Ansible.
 
 ### C#
 
 - **Projeto: Inventory Management**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/C%23)
-  - Descrição: Códigos desenvolvidos em C# para clientes externos, focados em gestão de estoque.
+  - Descrição: Códigos desenvolvidos em C# com foco em gestão de estoque.
 
 ## Utilização
 
