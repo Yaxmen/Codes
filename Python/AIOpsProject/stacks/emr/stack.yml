@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS EMR Cluster with Spark
+
+Resources:
+  EMRRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: elasticmapreduce.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonElasticMapReduceRole
+  EMRInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref EMRRole
+
+  EMRCluster:
+    Type: AWS::EMR::Cluster
+    Properties:
+      Name: EMR-Spark-Cluster
+      ReleaseLabel: emr-6.5.0
+      Instances:
+        MasterInstanceGroup:
+          InstanceCount: 1
+          InstanceType: m5.xlarge
+        Ec2KeyName: EMRKeyPairAiOps
+        Ec2SubnetId: subnet-d36549b4
+        EmrManagedMasterSecuritygroup: !ImportValue SageMakerSecurityGroupID
+        EmrManagedSlaveSecurityGroup: !ImportValue SageMakerSecurityGroupID
+      JobFlowRole: !Ref EMRInstanceProfile
+      ServiceRole: !Ref EMRRole
+
+Outputs:
+  MyName:
+    Value: !Ref "AWS::StackName"

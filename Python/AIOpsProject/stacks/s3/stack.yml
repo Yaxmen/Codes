@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: cf-dev1-aiops
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: LogLifecycleRule
+            Status: Enabled
+            Prefix: logs/
+            ExpirationInDays: 365
+            NoncurrentVersionExpirationInDays: 30
+
+Outputs:
+  MyName:
+    Value: !Ref "AWS::StackName"

@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: Test
+
+Resources:
+  AIOpsEMR:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/tf-dev1-aiops/dev/infra/stacks/emr/stack.yml
+
+
+  AIOpsNetwork:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/tf-dev1-aiops/dev/infra/stacks/network/stack.yml
+
+
+  AIOpsS3:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/tf-dev1-aiops/dev/infra/stacks/s3/stack.yml
+
+
+  AIOpsSagemaker:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/tf-dev1-aiops/dev/infra/stacks/sagemaker/stack.yml
+
+Outputs:
+  MyName:
+    Value: !Ref "AWS::StackName"

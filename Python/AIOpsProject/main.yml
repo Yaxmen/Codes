@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: Test
+
+Resources:
+  AIOps:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/tf-dev1-aiops/dev/infra/stacks/stack.yml
+
+Outputs:
+  MyName:
+    Value: !Ref "AWS::StackName"
+
