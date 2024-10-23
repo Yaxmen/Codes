@@ -15,20 +15,20 @@ Param (
 $ClientId = "clientID"
 $TenantId = "tenantID"
 $key = (1..16)
-$Secret = Get-Content "D:\Password\GraphAppPassword.txt" | ConvertTo-SecureString -Key $key -ErrorAction Stop
+$Secret = Get-Content "D:\diretorio\Password.txt" | ConvertTo-SecureString -Key $key -ErrorAction Stop
 $ClientSecretCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ClientId, $Secret
 
 $Sleep = 40
 
 
-$logFile = "d:\Util\rooms\"+(Get-Date).ToString('yyyy')+"_xRoomlog.csv"
+$logFile = "d:\diretorio\diretorio\"+(Get-Date).ToString('yyyy')+"_xRoomlog.csv"
 
 # Definindo credenciais de acesso a tenant
 
 #Ambiente PROD
 $username = "e-mail"
 $msolKeyAuth = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
-$password = Get-Content "D:\Password\password.txt" -ErrorAction Stop | ConvertTo-SecureString -Key $msolKeyAuth -ErrorAction Stop
+$password = Get-Content "D:\diretorio\password.txt" -ErrorAction Stop | ConvertTo-SecureString -Key $msolKeyAuth -ErrorAction Stop
 $Credentials = New-Object -typename System.Management.Automation.PSCredential -argumentlist $username,$password -ErrorAction Stop
 
 #Função de Log

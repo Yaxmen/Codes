@@ -2,7 +2,7 @@
 $startTime = Get-Date
 
 # Define o caminho base onde as pastas de log serão criadas
-$logBasePath = "C:\Automation\Petro"
+$logBasePath = "C:\diretorio\diretorio"
 
 $localComputerName = $env:COMPUTERNAME
 
@@ -15,7 +15,7 @@ $LogFileName = "$localComputerName.txt"
 $LogFilePath = Join-Path -Path $logFolderPath -ChildPath $LogFileName
 
 # Caminho do arquivo com a lista de serviços
-$servicesFile = "C:\Automation\Petro\services.txt"
+$servicesFile = "C:\diretorio\diretorio\services.txt"
 
 # Inicializa o log
 $executionLog = @()
