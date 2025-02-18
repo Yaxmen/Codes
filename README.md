@@ -71,16 +71,8 @@ cd Codes
 
 ### Executar Códigos
 
+- Python
 ```bash
-# Navegar até o diretório do script Python
-cd Python
-
-# Instalar dependências (se houver um arquivo requirements.txt)
-pip install -r requirements.txt
-
-# Executar o script Python
-python Create_tables.py
-
 # Navegar até o diretório do script Python
 cd Python
 
@@ -91,15 +83,37 @@ pip install -r requirements.txt
 python Create_tables.py
 ```
 
-### Compilar o projeto (necessário ter o .NET SDK instalado)
-
+- JavaScript
 ```bash
+# Navegar até o diretório do script JavaScript
+cd JavaScript
+
+# Executar o script JavaScript (geralmente em um ambiente web ou com Node.js)
+node app.js
+```
+
+- HTML
+```bash
+# Navegar até o diretório do arquivo HTML
+cd HTML
+
+# Abrir o arquivo HTML em um navegador
+open Main.html
+# ou em sistemas Unix
+xdg-open Main.html
+# ou no Windows
+start Main.html
+```
+
+- C#
+```bash
+# Navegar até o diretório do projeto C#
+cd C#
+
+# Compilar o projeto (necessário ter o .NET SDK instalado)
 dotnet build GerenciaEstoqLoja.csproj
-```
 
-### Executar o projeto
-
-```bash
+# Executar o projeto
 dotnet run --project GerenciaEstoqLoja.csproj
 ```
 
