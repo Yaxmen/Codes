@@ -1,6 +1,6 @@
 # Repositório de Códigos
 
-Este repositório contém uma coleção de códigos de projetos e freelas desenvolvidos por [Yaxmen](https://github.com/Yaxmen) e equipe. Aqui você encontrará exemplos e soluções em diversas linguagens de programação, incluindo Python, JavaScript, HTML, PowerShell e C#.
+Este repositório contém uma coleção de códigos de projetos e freelas desenvolvidos por [Yasmim](https://github.com/Yaxmen) e equipe. Aqui você encontrará exemplos e soluções em diversas linguagens de programação, incluindo Python, JavaScript, HTML, PowerShell e C#.
 
 ---
 
@@ -85,6 +85,7 @@ python Create_tables.py
 JavaScript
 bash
 Copy
+
 # Navegar até o diretório do script JavaScript
 cd JavaScript
 
@@ -93,27 +94,35 @@ node app.js
 HTML
 bash
 Copy
+
 # Navegar até o diretório do arquivo HTML
 cd HTML
 
 # Abrir o arquivo HTML em um navegador
 open Main.html
+
 # ou em sistemas Unix
 xdg-open Main.html
+
 # ou no Windows
 start Main.html
 C#
 bash
 Copy
+
 # Navegar até o diretório do projeto C#
 cd C#
 
 # Compilar o projeto (necessário ter o .NET SDK instalado)
 dotnet build GerenciaEstoqLoja.csproj
 
+---
+
 # Executar o projeto
 dotnet run --project GerenciaEstoqLoja.csproj
-🤝 Contribuição
+
+### 🤝 Contribuição
+
 Contribuições são bem-vindas! Se você quiser contribuir com este repositório, siga os passos abaixo:
 
 Faça um fork do repositório.
@@ -126,7 +135,8 @@ Faça push para a branch (git push origin feature/nova-feature).
 
 Abra um Pull Request.
 
-📄 Licença
+### 📄 Licença
+
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 Feito com ❤️ por Yasmim Duarte.
