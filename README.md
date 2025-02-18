@@ -4,39 +4,29 @@ Este repositório contém uma coleção de códigos de projetos e freelas desenv
 
 ## Conteúdo do Repositório
 
-### Python
-
-- **Projeto: Backend**
+- **Python**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Python)
-  - Descrição: Utilização do SQLAlchemy para comunicação com FastAPI.
+  - Descrição: Utilização do SQLAlchemy para comunicação com FastAPI | Automação de Processos para Sistemas Operacionais | Automação de Network | Comunicalção com AWS Cloud.
 
-### JavaScript
-
-- **Projeto: WebApp**
+- **JavaScript**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/JavaScript)
   - Descrição: Scripts para funcionalidades dinâmicas em aplicações web.
 
-### HTML
-
-- **Projeto: Academic Presentation**
+- **HTML**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/HTML)
-  - Descrição: Projeto para apresentação acadêmica - (2022).
+  - Descrição: Projeto Back/Front desenvolvido para fins acadêmicos.
 
-### PowerShell
+- **PowerShell**
+  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/PowerShell)
+  - Descrição: Automação de processos coletando dados do ITSM SNOW com processamento via Ansible | Automação para Azure | Configuração automatica de processos Windows.
 
-- **Projeto: MSO365 Automation**
-  - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Shell%20Script)
-  - Descrição: Automação de processos coletando dados do ITSM SNOW com processamento via Ansible.
-
-### C#
-
-- **Projeto: Inventory Management**
+- **C#**
   - [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/C%23)
   - Descrição: Códigos desenvolvidos em C# com foco em gestão de estoque.
 
 ## Utilização
 
-Para utilizar qualquer um dos códigos, siga as instruções específicas comentadas dentro de cada arquivo. Certifique-se de ter as dependências necessárias instaladas e as permissões adequadas.
+Para utilizar qualquer um dos códigos, siga as instruções específicas comentadas dentro de cada arquivo.
 
 ### Exemplo de Uso
 
@@ -44,10 +34,10 @@ Para utilizar qualquer um dos códigos, siga as instruções específicas coment
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/Yaxmen/codigos.git
+git clone https://github.com/Yaxmen/Codes.git
 
 # Navegar até o diretório do repositório clonado
-cd codigos
+cd Codes
 
 # Navegar até o diretório do script Python
 cd Python
