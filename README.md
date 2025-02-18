@@ -97,13 +97,13 @@ python Create_tables.py
 dotnet build GerenciaEstoqLoja.csproj
 ```
 
----
-
 ### Executar o projeto
 
 ```bash
 dotnet run --project GerenciaEstoqLoja.csproj
 ```
+
+---
 
 ### 🤝 Contribuição
 
