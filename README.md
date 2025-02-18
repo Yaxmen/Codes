@@ -91,7 +91,7 @@ pip install -r requirements.txt
 python Create_tables.py
 ```
 
-# Compilar o projeto (necessário ter o .NET SDK instalado)
+### Compilar o projeto (necessário ter o .NET SDK instalado)
 
 ```bash
 dotnet build GerenciaEstoqLoja.csproj
@@ -99,7 +99,7 @@ dotnet build GerenciaEstoqLoja.csproj
 
 ---
 
-# Executar o projeto
+### Executar o projeto
 
 ```bash
 dotnet run --project GerenciaEstoqLoja.csproj
