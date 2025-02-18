@@ -135,4 +135,4 @@ Contribuições são bem-vindas! Se você quiser contribuir com este repositóri
 
 ### 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://chat.deepseek.com/a/chat/s/LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Yaxmen/Codes?tab=MIT-1-ov-file#readme) para mais detalhes.
