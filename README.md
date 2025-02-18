@@ -133,6 +133,8 @@ Contribuições são bem-vindas! Se você quiser contribuir com este repositóri
 
 - Abra um Pull Request.
 
+---
+
 ### 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Yaxmen/Codes?tab=MIT-1-ov-file#readme) para mais detalhes.
