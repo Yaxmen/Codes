@@ -67,13 +67,11 @@ git clone https://github.com/Yaxmen/Codes.git
 
 # Navegar até o diretório do repositório clonado
 cd Codes
+```
 
----
+### Executar Códigos
 
-Executar Códigos
-Python
-bash
-Copy
+```bash
 # Navegar até o diretório do script Python
 cd Python
 
@@ -82,61 +80,45 @@ pip install -r requirements.txt
 
 # Executar o script Python
 python Create_tables.py
-JavaScript
-bash
-Copy
 
-# Navegar até o diretório do script JavaScript
-cd JavaScript
+# Navegar até o diretório do script Python
+cd Python
 
-# Executar o script JavaScript (geralmente em um ambiente web ou com Node.js)
-node app.js
-HTML
-bash
-Copy
+# Instalar dependências (se houver um arquivo requirements.txt)
+pip install -r requirements.txt
 
-# Navegar até o diretório do arquivo HTML
-cd HTML
-
-# Abrir o arquivo HTML em um navegador
-open Main.html
-
-# ou em sistemas Unix
-xdg-open Main.html
-
-# ou no Windows
-start Main.html
-C#
-bash
-Copy
-
-# Navegar até o diretório do projeto C#
-cd C#
+# Executar o script Python
+python Create_tables.py
+```
 
 # Compilar o projeto (necessário ter o .NET SDK instalado)
+
+```bash
 dotnet build GerenciaEstoqLoja.csproj
+```
 
 ---
 
 # Executar o projeto
+
+```bash
 dotnet run --project GerenciaEstoqLoja.csproj
+```
 
 ### 🤝 Contribuição
 
 Contribuições são bem-vindas! Se você quiser contribuir com este repositório, siga os passos abaixo:
 
-Faça um fork do repositório.
+- Faça um fork do repositório.
 
-Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+- Crie uma branch para sua feature (git checkout -b feature/nova-feature).
 
-Commit suas mudanças (git commit -m 'Adicionando nova feature').
+- Commit suas mudanças (git commit -m 'Adicionando nova feature').
 
-Faça push para a branch (git push origin feature/nova-feature).
+- Faça push para a branch (git push origin feature/nova-feature).
 
-Abra um Pull Request.
+- Abra um Pull Request.
 
 ### 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-Feito com ❤️ por Yasmim Duarte.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://chat.deepseek.com/a/chat/s/LICENSE) para mais detalhes.
