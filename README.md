@@ -1,140 +1,152 @@
 # Repositório de Códigos
 
-Este repositório contém uma coleção de códigos de projetos e freelas desenvolvidos por [Yasmim](https://github.com/Yaxmen) e equipe. Aqui você encontrará exemplos e soluções em diversas linguagens de programação, incluindo Python, JavaScript, HTML, PowerShell e C#.
+Repositório pessoal com uma coleção de **códigos, estudos, experimentos e projetos** desenvolvidos ao longo da minha trajetória em tecnologia.
+
+Este espaço reúne principalmente projetos acadêmicos, freelas e experimentações em diferentes linguagens e áreas, servindo também como um registro da minha evolução em desenvolvimento de software e automação.
+
+> Projetos deste repositório representam diferentes momentos da minha trajetória e, por isso, podem utilizar abordagens e tecnologias distintas das que utilizo atualmente em projetos profissionais.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white" alt="PowerShell">
-  <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white" alt="C#">
+  <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#">
   <img src="https://img.shields.io/badge/Ansible-EE0000?style=flat&logo=ansible&logoColor=white" alt="Ansible">
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white" alt="AWS">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white" alt="AWS">
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white" alt="FastAPI">
 </p>
 
 ---
 
-## 📂 Conteúdo do Repositório
+## 📂 Conteúdo
 
-### **Python**
-- [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/Python)
-- **Descrição**: 
-  - Utilização do SQLAlchemy para comunicação com FastAPI.
-  - Automação de processos para sistemas operacionais.
-  - Automação de redes e integração com AWS Cloud.
+### Python
+[Ver códigos](https://github.com/Yaxmen/Codes/tree/main/Python)
 
-### **JavaScript**
-- [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/JavaScript)
-- **Descrição**: 
-  - Scripts para funcionalidades dinâmicas em aplicações web.
-  - Exemplos de integração com APIs e manipulação do DOM.
+Exemplos de:
+- Integração entre **FastAPI e SQLAlchemy**
+- Automação de processos para sistemas operacionais
+- Automação de redes
+- Integrações com **AWS**
 
-### **HTML**
-- [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/HTML)
-- **Descrição**: 
-  - Projeto Back/Front desenvolvido para fins acadêmicos.
-  - Exemplos de páginas web responsivas e interativas.
+### PowerShell
+[Ver códigos](https://github.com/Yaxmen/Codes/tree/main/PowerShell)
 
-### **PowerShell**
-- [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/PowerShell)
-- **Descrição**: 
-  - Automação de processos coletando dados do ITSM ServiceNow.
-  - Integração com Ansible para processamento de tarefas.
-  - Automação para Azure e configuração automática de processos Windows.
+Exemplos de:
+- Automação de processos
+- Integração com **ServiceNow**
+- Integração com **Ansible**
+- Automação e configuração de ambientes Windows
+- Processos relacionados à **Azure**
 
-### **C#**
-- [Link para códigos](https://github.com/Yaxmen/Codes/tree/main/C%23)
-- **Descrição**: 
-  - Códigos desenvolvidos em C# com foco em gestão de estoque.
-  - Exemplos de aplicações desktop e boas práticas de desenvolvimento.
+### JavaScript
+[Ver códigos](https://github.com/Yaxmen/Codes/tree/main/JavaScript)
+
+Exemplos de:
+- Funcionalidades dinâmicas para aplicações web
+- Integração com APIs
+- Manipulação do DOM
+- Tradução automática de Web Sites
+
+### HTML
+[Ver códigos](https://github.com/Yaxmen/Codes/tree/main/HTML)
+
+Projetos e experimentos voltados ao desenvolvimento web, incluindo trabalhos acadêmicos e páginas interativas.
+
+### C#
+[Ver códigos](https://github.com/Yaxmen/Codes/tree/main/C%23)
+
+Exemplos de desenvolvimento de aplicações, incluindo projetos acadêmicos e uma aplicação de gerenciamento de estoque.
 
 ---
 
-## 🚀 Como Usar
+## 🚀 Executando os projetos
 
-Para utilizar qualquer um dos códigos, siga as instruções específicas comentadas dentro de cada arquivo.
+Cada diretório pode possuir requisitos e instruções próprias. Antes de executar um projeto, consulte os arquivos e dependências disponíveis no respectivo diretório.
 
-### **Clonar o Repositório**
+### Clonar o repositório
 
 ```bash
-# Clonar o repositório
 git clone https://github.com/Yaxmen/Codes.git
-
-# Navegar até o diretório do repositório clonado
 cd Codes
 ```
 
-### Executar Códigos
+### Python
 
-- Python
 ```bash
-# Navegar até o diretório do script Python
 cd Python
 
-# Instalar dependências (se houver um arquivo requirements.txt)
+# Caso exista um requirements.txt
 pip install -r requirements.txt
 
-# Executar o script Python
+# Exemplo
 python Create_tables.py
 ```
 
-- JavaScript
-```bash
-# Navegar até o diretório do script JavaScript
-cd JavaScript
+### JavaScript
 
-# Executar o script JavaScript (geralmente em um ambiente web ou com Node.js)
+```bash
+cd JavaScript
 node app.js
 ```
 
-- HTML
-```bash
-# Navegar até o diretório do arquivo HTML
-cd HTML
+### HTML
 
-# Abrir o arquivo HTML em um navegador
-open Main.html
-# ou em sistemas Unix
-xdg-open Main.html
-# ou no Windows
+Os projetos HTML podem ser abertos diretamente no navegador.
+
+No Windows:
+
+```bash
 start Main.html
 ```
 
-- C#
+No Linux:
+
 ```bash
-# Navegar até o diretório do projeto C#
+xdg-open Main.html
+```
+
+### C#
+
+```bash
 cd C#
-
-# Compilar o projeto (necessário ter o .NET SDK instalado)
 dotnet build GerenciaEstoqLoja.csproj
-
-# Executar o projeto
 dotnet run --project GerenciaEstoqLoja.csproj
 ```
 
 ---
 
-### 🤝 Contribuição
+## 📌 Sobre este repositório
 
-Contribuições são bem-vindas! Se você quiser contribuir com este repositório, siga os passos abaixo:
+Este repositório não representa apenas minha stack atual. Ele também documenta uma parte da minha trajetória de aprendizado e desenvolvimento, incluindo projetos que contribuíram para a construção das competências que utilizo hoje.
 
-- Faça um fork do repositório.
-
-- Crie uma branch para sua feature (git checkout -b feature/nova-feature).
-
-- Commit suas mudanças (git commit -m 'Adicionando nova feature').
-
-- Faça push para a branch (git push origin feature/nova-feature).
-
-- Abra um Pull Request.
+Para conhecer meu posicionamento profissional e os projetos mais recentes, consulte meu [perfil no GitHub](https://github.com/Yaxmen) e meu [portfólio](https://yaxmen.github.io/).
 
 ---
 
-### 📄 Licença
+## 🤝 Contribuição
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Yaxmen/Codes?tab=MIT-1-ov-file#readme) para mais detalhes.
+Contribuições são bem-vindas.
+
+Para propor alterações:
+
+```bash
+git checkout -b feature/minha-feature
+git commit -m "feat: adiciona nova feature"
+git push origin feature/minha-feature
+```
+
+Depois, abra um Pull Request.
+
+---
+
+## 📄 Licença
+
+Este repositório está disponível sob a licença **MIT**.
+
+Consulte o arquivo [LICENSE](https://github.com/Yaxmen/Codes?tab=MIT-1-ov-file#readme) para mais detalhes.
