@@ -1,0 +1,26 @@
+Slide 1 — Estratégia da R4
+“Eu trouxe uma proposta inicial de como organizar a frente de Telecom nessa R4, principalmente depois dos últimos alinhamentos.
+A ideia é começar pelos principais ofensores e evoluir de forma incremental. Primeiro consolidamos o BADLINK, contemplando tanto LAN quanto WAN no Ansible. Depois usamos esse aprendizado para avançar no OSPF e nos demais fluxos.
+Não estou propondo uma migração em massa. A ideia é entender cada automação, estruturar bem e reaproveitar os padrões que formos construindo.”
+
+Slide 2 — Roadmap
+“Como temos quatro sprints de três semanas, pensei inicialmente nessa distribuição.
+Na Sprint 1, de 5 a 23 de outubro, o foco seria BADLINK LAN e WAN. Na Sprint 2, de 26 de outubro a 13 de novembro, a prioridade seria OSPF Neighbor State Change e, havendo capacidade, evoluir também High CPU e Memory, que já possuem alguma coisa no Ansible.
+Para as Sprints 3 e 4 eu preferi não fechar nada agora. Queria justamente usar essa conversa com vocês para começarmos a definir os próximos ofensores considerando impacto, volume e complexidade.”
+
+Slide 3 — BADLINK LAN/WAN
+“No BADLINK a gente não começa do zero. O LAN já possui um fluxo no Ansible e eu já venho trabalhando em melhorias nele.
+Minha proposta agora é aproveitar essa estrutura e incorporar o WAN, consolidando o BADLINK como um fluxo mais completo.
+Primeiro fechamos com vocês as regras e diferenças entre LAN e WAN, depois implementamos e consolidamos isso no AAP e, no final da sprint, fazemos os testes end-to-end e documentamos.
+A ideia é que o BADLINK vire nosso primeiro blueprint para as próximas automações de Telecom.”
+
+Aqui vale parar alguns segundos e deixar Telecom comentar, principalmente sobre WAN.
+Slide 4 — OSPF e High CPU/Memory
+“Na Sprint 2, a prioridade passa a ser OSPF, porque é outro dos principais ofensores.
+Nesse caso eu quero começar pelo discovery: entender o fluxo atual no Flow Designer, regras, dependências, comandos, atuação manual e integrações. Depois desenhamos o TO-BE e trazemos para o AAP aproveitando o padrão que validamos no BADLINK.
+High CPU e Memory entram como uma evolução adicional, mas eu prefiro deixar condicionado à complexidade que encontrarmos no OSPF, para não comprometer a qualidade da entrega principal.”
+
+Slide 5 — o mais importante da reunião
+Aqui eu passaria claramente a bola para eles:
+“E esses são justamente os pontos que eu queria validar com vocês hoje. Primeiro, se esse roadmap faz sentido operacionalmente. Segundo, fechar melhor as regras do BADLINK WAN. Terceiro, começar a levantar o cenário atual do OSPF. E por último, ouvir de vocês quais automações fariam mais sentido para as Sprints 3 e 4.
+Eu trouxe uma proposta técnica inicial, mas queria usar o restante da conversa principalmente para ouvir vocês, porque vocês têm o conhecimento operacional desses fluxos.”
