@@ -1,0 +1,55 @@
+---
+# Reachability operacional: execução de comando read-only via CLI.
+# Não é ICMP ping e não testa conectividade a terceiros.
+- name: Cisco | Inicializar resultado de reachability
+  ansible.builtin.set_fact:
+    check_result:
+      id: reachability
+      status: FAILED
+      reason: REACHABILITY_FAILED
+      details:
+        ping_status: FAILED
+
+- name: Cisco | Validar execução operacional
+  block:
+    - name: Cisco | Executar comando de leitura no ASA
+      cisco.asa.asa_command:
+        commands:
+          - show clock
+      register: cisco_reach_probe
+      changed_when: false
+      when: ansible_network_os == 'cisco.asa.asa'
+
+    - name: Cisco | Executar comando de leitura no IOS/IOS-XE
+      cisco.ios.ios_command:
+        commands:
+          - show clock
+      register: cisco_reach_probe
+      changed_when: false
+      when: ansible_network_os == 'cisco.ios.ios'
+
+    - name: Cisco | Registrar execução bem-sucedida
+      ansible.builtin.set_fact:
+        check_result:
+          id: reachability
+          status: SUCCESS
+          reason: ''
+          details:
+            ping_status: SUCCESS
+            platform: "{{ ansible_network_os }}"
+      when:
+        - ansible_network_os in ['cisco.asa.asa', 'cisco.ios.ios']
+        - cisco_reach_probe is defined
+        - not (cisco_reach_probe.skipped | default(false))
+
+  rescue:
+    - name: Cisco | Registrar falha operacional
+      ansible.builtin.set_fact:
+        check_result:
+          id: reachability
+          status: FAILED
+          reason: REACHABILITY_FAILED
+          details:
+            ping_status: FAILED
+            platform: "{{ ansible_network_os | default('UNKNOWN') }}"
+            error: "{{ ansible_failed_result.msg | default('Falha na execução de comando CLI') }}"
