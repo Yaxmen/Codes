@@ -1,38 +1,86 @@
 ---
-- name: START - Identificar plataforma para diagnostico de backup
+- name: START - Identificar plataforma Cisco
   hosts: localhost
   gather_facts: false
   connection: local
 
+  vars:
+    aap_api_url: "{{ lookup('env', 'CONTROLLER_HOST') }}"
+    aap_api_token: "{{ lookup('env', 'CONTROLLER_OAUTH_TOKEN') }}"
+
+    inventory_ios: "I-TELECOM-CISCO-IOS"
+    inventory_asa: "I-TELECOM-CISCO-ASA"
+
   tasks:
-    - name: Validar entrada do workflow
+    - name: Validar parametros de entrada
       ansible.builtin.assert:
         that:
           - target_host is defined
-          - target_host | string | trim | length > 0
-        fail_msg: "Informe target_host na Survey do workflow"
+          - target_host | trim | length > 0
+          - aap_api_url | length > 0
+          - aap_api_token | length > 0
+        fail_msg: >-
+          target_host ou credenciais da API do AAP
+          nao foram disponibilizados.
 
-    - name: Identificar plataforma pelo inventario
+    - name: Consultar inventarios Cisco no AAP
+      ansible.builtin.uri:
+        url: >-
+          {{ aap_api_url | regex_replace('/$', '') }}/api/v2/inventories/?name={{ item | urlencode }}
+        method: GET
+        headers:
+          Authorization: "Bearer {{ aap_api_token }}"
+        return_content: true
+        validate_certs: true
+        status_code: 200
+      loop:
+        - "{{ inventory_ios }}"
+        - "{{ inventory_asa }}"
+      register: inventory_queries
+      no_log: true
+
+    - name: Obter IDs dos inventarios
       ansible.builtin.set_fact:
-        host_ios: >-
-          {{ target_host in (groups.get('cisco_ios', [])) }}
-        host_asa: >-
-          {{ target_host in (groups.get('cisco_asa', [])) }}
+        ios_inventory_id: "{{ inventory_queries.results[0].json.results[0].id }}"
+        asa_inventory_id: "{{ inventory_queries.results[1].json.results[0].id }}"
+
+    - name: Consultar host nos inventarios
+      ansible.builtin.uri:
+        url: >-
+          {{ aap_api_url | regex_replace('/$', '') }}/api/v2/inventories/{{ item.id }}/hosts/?name={{ target_host | urlencode }}
+        method: GET
+        headers:
+          Authorization: "Bearer {{ aap_api_token }}"
+        return_content: true
+        validate_certs: true
+        status_code: 200
+      loop:
+        - id: "{{ ios_inventory_id }}"
+          platform: cisco_ios
+        - id: "{{ asa_inventory_id }}"
+          platform: cisco_asa
+      register: host_queries
+      no_log: true
+
+    - name: Classificar plataforma
+      ansible.builtin.set_fact:
+        host_ios: "{{ host_queries.results[0].json.count | int > 0 }}"
+        host_asa: "{{ host_queries.results[1].json.count | int > 0 }}"
 
     - name: Validar classificacao unica
       ansible.builtin.assert:
         that:
           - host_ios | bool != host_asa | bool
         fail_msg: >-
-          Host nao encontrado nos grupos IOS/ASA
-          ou cadastrado em ambos.
+          Host nao encontrado nos inventarios IOS/ASA
+          ou encontrado em ambos.
 
-    - name: Definir plataforma
+    - name: Definir plataforma identificada
       ansible.builtin.set_fact:
         detected_platform: >-
           {{ 'cisco_ios' if host_ios | bool else 'cisco_asa' }}
 
-    - name: Publicar resultado para o workflow
+    - name: Publicar resultado no Artifact Store
       ansible.builtin.set_stats:
         data:
           target_host: "{{ target_host }}"
@@ -40,7 +88,7 @@
           routing_status: "identified"
         per_host: false
 
-    - name: Exibir classificacao
+    - name: Exibir resultado
       ansible.builtin.debug:
         msg:
           host: "{{ target_host }}"
