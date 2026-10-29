@@ -16,22 +16,29 @@
       ansible.builtin.assert:
         that:
           - target_host in groups['all']
-        fail_msg: "Host nao encontrado no inventario do START."
+        fail_msg: "Host nao encontrado no inventario Cisco."
 
-    - name: Consultar plataforma cadastrada
+    - name: Identificar plataforma pelos grupos
       ansible.builtin.set_fact:
-        detected_platform: >-
-          {{ hostvars[target_host].platform | default('unknown') | string | trim | lower }}
+        is_asa: >-
+          {{ target_host in groups.get('sist_operacional_1', []) }}
+        is_ios: >-
+          {{ target_host in groups.get('sist_operacional_3', []) }}
 
-    - name: Validar plataforma suportada
+    - name: Validar classificacao do equipamento
       ansible.builtin.assert:
         that:
-          - detected_platform in ['cisco_ios', 'cisco_asa']
+          - (is_asa | bool) != (is_ios | bool)
         fail_msg: >-
-          Plataforma nao identificada ou nao suportada
-          para o host informado.
+          Host sem classificacao IOS/ASA
+          ou presente nos dois grupos.
 
-    - name: Publicar resultado no Artifact Store
+    - name: Definir plataforma
+      ansible.builtin.set_fact:
+        detected_platform: >-
+          {{ 'cisco_asa' if (is_asa | bool) else 'cisco_ios' }}
+
+    - name: Publicar resultado para o workflow
       ansible.builtin.set_stats:
         data:
           target_host: "{{ target_host }}"
