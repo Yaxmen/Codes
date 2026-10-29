@@ -1,0 +1,48 @@
+---
+- name: START - Identificar plataforma para diagnostico de backup
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Validar entrada do workflow
+      ansible.builtin.assert:
+        that:
+          - target_host is defined
+          - target_host | string | trim | length > 0
+        fail_msg: "Informe target_host na Survey do workflow"
+
+    - name: Identificar plataforma pelo inventario
+      ansible.builtin.set_fact:
+        host_ios: >-
+          {{ target_host in (groups.get('cisco_ios', [])) }}
+        host_asa: >-
+          {{ target_host in (groups.get('cisco_asa', [])) }}
+
+    - name: Validar classificacao unica
+      ansible.builtin.assert:
+        that:
+          - host_ios | bool != host_asa | bool
+        fail_msg: >-
+          Host nao encontrado nos grupos IOS/ASA
+          ou cadastrado em ambos.
+
+    - name: Definir plataforma
+      ansible.builtin.set_fact:
+        detected_platform: >-
+          {{ 'cisco_ios' if host_ios | bool else 'cisco_asa' }}
+
+    - name: Publicar resultado para o workflow
+      ansible.builtin.set_stats:
+        data:
+          target_host: "{{ target_host }}"
+          platform: "{{ detected_platform }}"
+          routing_status: "identified"
+        per_host: false
+
+    - name: Exibir classificacao
+      ansible.builtin.debug:
+        msg:
+          host: "{{ target_host }}"
+          platform: "{{ detected_platform }}"
+          routing_status: "identified"
