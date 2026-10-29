@@ -1,54 +1,20 @@
+
 ---
-- name: START - Identificar plataforma Cisco
+- name: ROUTE - Validar plataforma Cisco
   hosts: localhost
   gather_facts: false
   connection: local
 
   tasks:
-    - name: Validar host informado
+    - name: Validar plataforma recebida
       ansible.builtin.assert:
         that:
-          - target_host is defined
-          - target_host | string | trim | length > 0
-        fail_msg: "Informe target_host na Survey."
-
-    - name: Validar host no inventario
-      ansible.builtin.assert:
-        that:
-          - target_host in groups['all']
-        fail_msg: "Host nao encontrado no inventario Cisco."
-
-    - name: Identificar plataforma pelos grupos
-      ansible.builtin.set_fact:
-        is_asa: >-
-          {{ target_host in groups.get('sist_operacional_1', []) }}
-        is_ios: >-
-          {{ target_host in groups.get('sist_operacional_3', []) }}
-
-    - name: Validar classificacao do equipamento
-      ansible.builtin.assert:
-        that:
-          - (is_asa | bool) != (is_ios | bool)
+          - platform is defined
+          - expected_platform is defined
+          - platform == expected_platform
         fail_msg: >-
-          Host sem classificacao IOS/ASA
-          ou presente nos dois grupos.
-
-    - name: Definir plataforma
-      ansible.builtin.set_fact:
-        detected_platform: >-
-          {{ 'cisco_asa' if (is_asa | bool) else 'cisco_ios' }}
-
-    - name: Publicar resultado para o workflow
-      ansible.builtin.set_stats:
-        data:
-          target_host: "{{ target_host }}"
-          platform: "{{ detected_platform }}"
-          routing_status: "identified"
-        per_host: false
-
-    - name: Exibir resultado
-      ansible.builtin.debug:
-        msg:
-          host: "{{ target_host }}"
-          platform: "{{ detected_platform }}"
-          routing_status: "identified"
+          Rota nao selecionada.
+          Plataforma identificada: {{ platform | default('unknown') }}.
+          Rota esperada: {{ expected_platform | default('unknown') }}.
+        success_msg: >-
+          Rota selecionada: {{ expected_platform }}.
